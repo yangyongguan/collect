@@ -1,0 +1,128 @@
+@import "./variable";
+
+@mixin tl($direction: left) {
+  text-align: $direction;
+  text-align-last: $direction;
+}
+
+@mixin border($bd-color: $color-bd) {
+  border: solid 1px $bd-color;
+  box-sizing: border-box;
+}
+
+@mixin border-shadow {
+  box-sizing: border-box;
+  -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.08);
+  @include border
+}
+
+@mixin button-normal(
+  $bg-color: $color-default,
+  $hover-color: $color-default-hover,
+  $active-color: $color-default-active) {
+  height: 40px;
+  line-height: 40px;
+  border-radius: 20px;
+  border: none;
+  padding: 0 30px;
+  font-size: 14px;
+  color: #222;
+  background-color: $bg-color;
+  box-sizing: border-box;
+  &:hover {
+    transition: background-color .3s, opacity .1s;
+    cursor: pointer;
+    background-color: $hover-color;
+  }
+  &:active {
+    background-color: $active-color;
+  }
+}
+
+/* 默认按钮 */
+@mixin default-button() {
+  @include button-normal($color-fff, $color-default-hover, $color-default-active);
+  border: solid 1px #888888;
+  background-color: transparent;
+  color: #555;
+  &:hover,
+  &:active {
+    border-color: transparent;
+  }
+}
+
+/* 主要按钮 */
+@mixin primary-button() {
+  @include button-normal();
+  &[disabled] {
+    opacity: .3;
+    cursor: no-drop;
+  }
+  &:hover {
+    opacity: .95;
+  }
+  &:active {
+    opacity: 1;
+  }
+}
+
+/* 红色按钮 */
+@mixin red-button() {
+  @include button-normal($color-red, $color-red-hover, $color-red-active)
+}
+
+/* 蓝色按钮 */
+@mixin blue-button() {
+  @include button-normal($color-blue, $color-blue-hover, $color-blue-active)
+}
+
+.default-button {
+  @include default-button
+}
+
+.primary-button {
+  @include primary-button
+}
+
+.red-button {
+  @include red-button
+}
+
+.blue-button {
+  @include blue-button
+}
+
+@mixin linear($color1: #000, $color2: #fff, $angle: 180deg) {
+  background: ($color1+$color2)/2;
+  background: linear-gradient($angle, $color1, $color2);
+}
+
+@mixin animate($type: all, $sec: 0.2s, $animation: ease-in) {
+  transition: $type $sec $animation;
+}
+
+@mixin no-wrap($text: ellipsis) {
+  text-overflow: $text;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@mixin flex($justify: flex-start, $align-items: center, $dir: row, $wrap: nowrap, $align-content: stretch) {
+  display: flex;
+  flex-flow: $dir $wrap;
+  justify-content: $justify;
+  align-items: $align-items;
+  align-content: $align-content;
+}
+button[disabled] {
+  cursor:not-allowed !important;
+  opacity: 0.5 !important;
+  &:active,&:hover {
+    background-color: transparent;
+    color:$color-font-sub;
+    border-color:$color-font-sub;
+  }
+
+}

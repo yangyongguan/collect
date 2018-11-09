@@ -1,0 +1,101 @@
+@import "./variable";
+$color-ui-components:#4B5AFE;
+.el-select{
+  //.el-input__inner {
+  //  border: none;
+  //  background-color: transparent;
+  //}
+  color: #555;
+  input{
+    color: #555;
+  }
+}
+.el-select-dropdown{
+  .popper__arrow{
+    display: none;
+  }
+
+  .el-select-dropdown__item.hover, .el-select-dropdown__item:hover {
+    background:rgba(240,241,254,1);
+  }
+  .el-select-dropdown__item.selected {
+    color: $color-ui-components;
+  }
+}
+.el-radio__input.is-checked .el-radio__inner {
+  border-color: $color-ui-components;
+  background: $color-ui-components;
+}
+.el-radio__input.is-checked+.el-radio__label {
+  color: $color-ui-components;
+}
+.el-pagination.is-background .el-pager li.active {
+  background-color: #555;
+  border: none;
+}
+.el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li {
+  border: solid 1px #ccc;
+  border-radius: 4px;
+  color: #555;
+}
+.el-table--enable-row-hover .el-table__body tr:hover>td {
+  background-color: #F0F1FE;
+}
+.el-switch__core {
+  border: 1px solid #DEE1FF;
+  background: #DEE1FF;
+}
+.el-switch.is-checked .el-switch__core {
+  border-color: $color-ui-components;
+  background-color: $color-ui-components;
+}
+.el-date-table td.available {
+  color:$color-font;
+}
+.el-date-table td.current:not(.disabled) span {
+  background-color:$color-default;
+  color:$color-font;
+}
+.el-date-table td.today span {
+  color:$color-default;
+}
+.el-date-table td.available:hover {
+  color:$color-default;
+}
+.el-picker-panel__icon-btn:hover {
+  color:$color-default;
+}
+.el-date-picker__header-label.active, .el-date-picker__header-label:hover {
+  color:$color-default;
+}
+.el-button--text:active {
+  color:$color-default;
+}
+.el-button--text,.el-button--text:hover,.el-time-panel__btn.confirm,.el-button.is-active, .el-button.is-plain:active,.el-button.is-plain:focus, .el-button.is-plain:hover,.el-month-table td .cell:hover, .el-month-table td.current:not(.disabled) .cell {
+  color:$color-default;
+}
+.el-button.is-plain:focus, .el-button.is-plain:hover {
+  border-color:$color-default;
+}
+
+.el-input__inner:hover,.el-input.is-active .el-input__inner, .el-input__inner:focus {
+  border-color:$color-blue-hover;
+}
+.el-input__inner:active{
+  border-color:$color-blue-active;
+}
+.has-gutter{
+  background-color: #f5f5f5 !important;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.el-table th, .el-table tr {
+  background-color: transparent;
+}
+.el-checkbox__label,.el-checkbox__input.is-checked+.el-checkbox__label {
+  color:$color-font-sub;
+  a {
+    color:$color-blue;
+  }
+}
