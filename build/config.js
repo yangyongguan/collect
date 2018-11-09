@@ -22,7 +22,7 @@ const config = {
     API_PATH: '/api',
     SUB_DIR: 'static',
     IMGHOST: '',
-    PUBLIC_PATH: '/'
+    PUBLIC_PATH: './'
   },
   test: {
     BUILD_ENV: 'test',
