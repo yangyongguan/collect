@@ -4,7 +4,7 @@ const config = {
     BUILD_ENV: 'local',
     API_PATH: '/api',
     SUB_DIR: 'static',
-    PUBLIC_PATH: '/',
+    PUBLIC_PATH: './',
     IMGHOST: '',
     PC_HOST: '//localhost:6688/webinar/',
     proxyTable: {
@@ -22,21 +22,21 @@ const config = {
     API_PATH: '/api',
     SUB_DIR: 'static',
     IMGHOST: '',
-    PUBLIC_PATH: ''
+    PUBLIC_PATH: './'
   },
   test: {
     BUILD_ENV: 'test',
-    API_PATH: '/webinar/api',
+    API_PATH: '/web/api',
     SUB_DIR: 'static',
     IMGHOST: '',
     PUBLIC_PATH: ''
   },
   prod: {
     BUILD_ENV: 'prod',
-    API_PATH: '/webinar/api',
+    API_PATH: '/web/api',
     SUB_DIR: 'static',
     IMGHOST: '',
-    PUBLIC_PATH: ''
+    PUBLIC_PATH: './'
   }
 }
 module.exports = config
