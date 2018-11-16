@@ -76,6 +76,7 @@
     "axios": "^0.18.0",
     "better-scroll": "^1.12.6",
     "element-ui": "^2.4.6",
+    "three": "^0.98.0",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"

@@ -44,3 +44,16 @@ new Vue({
   store,
   render: h => h(App)
 })
+
+window.callbackResize = null
+let timeout = null
+window.onresize = function callbackResizeFn () {
+  if (timeout) return
+  if (window.callbackResize) {
+    timeout = setTimeout(() => {
+      clearTimeout(timeout)
+      timeout = null
+      window.callbackResize()
+    }, 500)
+  }
+}
